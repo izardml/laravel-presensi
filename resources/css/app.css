@@ -2,4 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+th {
+    /* @apply text-xs font-normal bg-zinc-800 text-slate-100 px-2 py-1; */
+    @apply text-base font-medium border-b px-2 py-1 text-black bg-blue-300;
+}
 
+tr {
+    @apply border-b
+}
+
+td {
+    @apply text-base font-normal px-1 py-1 text-zinc-800 bg-white lg:py-2;
+}
+
+.hamburger-line {
+    @apply w-[30px] h-[2px] my-2 block bg-slate-100;
+}
