@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Attendance extends Model
+{
+    use HasFactory;
+
+    protected $table = 'attendances';
+    protected $guarded = ['id'];
+
+    public function teacher(){
+        return $this->belongsTo(User::class, 'teacher_id');
+    }
+
+    public function subject(){
+        return $this->belongsTo(Subject::class, 'subject_id');
+    }
+
+    public function kelas(){
+        return $this->belongsTo(Kelas::class, 'kelas_id');
+    }
+
+    public function attdetail(){
+        return $this->hasMany(Attdetail::class);
+    }
+}
