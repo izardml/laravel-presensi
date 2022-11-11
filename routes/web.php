@@ -17,7 +17,17 @@ use App\Http\Controllers\SiswaController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    // if(['middleware' => ['auth']]){
+    //     if (auth()->user()->role == "guru"){
+    //         return redirect('guru.index');
+    //     }elseif (auth()->user()->role == "siswa") {
+    //         return redirect('siswa.index');
+    //     }
+    // }else {
+    //     return redirect('login.index');
+    // }
+    return redirect()->route('login.index');
 });
 
 Route::resource('/login', LoginController::class)->middleware('guest');
@@ -25,6 +35,7 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::group(['middleware' => ['auth', 'role:guru']], function(){
     Route::resource('/guru', GuruController::class);
+    Route::get('/guru/{guru}/delete', [GuruController::class, 'destroy']);
 });
 
 Route::group(['middleware' => ['auth', 'role:siswa']], function(){

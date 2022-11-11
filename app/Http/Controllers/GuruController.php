@@ -23,11 +23,12 @@ class GuruController extends Controller
         $kelas = Kelas::whereNot('id', 1)->get();
         $teacher_id = Auth::user()->id;
         // $attendance = Attendance::all();
-        $attendance = Attendance::where([
-            ['teacher_id', '=', $teacher_id]
-        ])->get();
+        $attendance = Attendance::where('teacher_id', $teacher_id)
+            ->orderBy('id', 'desc')
+            ->get();
 
         return view('guru')->with([
+            'no' => 1,
             'subjects' => $subject,
             'kelass' => $kelas,
             'attendances' => $attendance,
@@ -145,6 +146,10 @@ class GuruController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Attdetail::where('attendance_id', $id)->delete();
+
+        Attendance::destroy($id);
+
+        return redirect()->route('guru.index');
     }
 }

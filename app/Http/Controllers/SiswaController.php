@@ -34,6 +34,7 @@ class SiswaController extends Controller
             ->get();
 
         return view('siswa')->with([
+            'no' => 1,
             'atttodays' => $atttoday,
             'attendances' => $attendance,
         ]);
@@ -81,9 +82,11 @@ class SiswaController extends Controller
     {
         $data = Attdetail::find($id);
 
-        return view('formpresensi')->with([
-            'data' => $data,
-        ]);
+        if($data->attendance->date == date('Y-m-d')){   
+            return view('formpresensi')->with(['data' => $data,]);
+        }else{
+            return redirect()->route('siswa.index');
+        }
     }
 
     /**

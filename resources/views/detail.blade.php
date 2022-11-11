@@ -46,7 +46,7 @@
             </div>
             <div class="mb-10">
                 <h2 class="text-2xl font-normal mb-4 text-zinc-800">Daftar Siswa</h2>
-                <div class="overflow-scroll">
+                <div class="overflow-scroll  lg:overflow-auto">
                     <table class="w-full">
                         <thead>
                             <tr>
@@ -59,7 +59,8 @@
                         <tbody>
                             @foreach ($attdetails as $attdetail)
                             <tr>
-                                <td class="text-center">{{ $attdetail->id }}</td>
+                                {{-- <td class="text-center">{{ $attdetail->id }}</td> --}}
+                                <td class="text-center">{{ $no++ }}</td>
                                 <td class="text-center">{{ date("d M Y", strtotime($attdetail->attendance->date)) }}</td>
                                 <td>{{ $attdetail->student->name }}</td>
                                 <td class="text-center">
