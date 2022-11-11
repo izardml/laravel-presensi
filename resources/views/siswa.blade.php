@@ -6,17 +6,11 @@
 
     {{-- <h1>Main</h1> --}}
     <div class="lg:w-5/6">
-        <div class="w-full h-10 bg-blue-500 lg:hidden">
-            <button id="hamburger" name="hamburger" type="button" class="block absolute left-4">
-                <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
-                <span class="hamburger-line transition duration-300 ease-in-out"></span>
-                <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
-            </button>
-        </div>
+        @include('stickybar')
 
         <div class="px-3 py-10 lg:px-6" id="main">
             <div class="mb-10">
-                <h2 class="text-2xl font-normal mb-4 text-zinc-900">Presensi Hari Ini</h2>
+                <h2 class="text-2xl font-normal mb-4 text-zinc-900">Daftar Presensi Hari Ini</h2>
                 <div class="overflow-scroll lg:overflow-auto">
                     @if ($atttodays->count())
                     <table class="w-full">
@@ -49,7 +43,7 @@
                                     @if ($attendance->attstatus == 'tanpaKeterangan')
                                     Belum Presensi
                                     @else
-                                    {{$attendance->attstatus}}
+                                    {{ ucwords($attendance->attstatus) }}
                                     @endif
                                 </td>
                                 <td class="lg:flex lg:justify-center">
@@ -65,7 +59,7 @@
                 </div>
             </div>
             <div class="mb-10">
-                <h2 class="text-2xl font-normal mb-4 text-zinc-900">Daftar Presensi</h2>
+                <h2 class="text-2xl font-normal mb-4 text-zinc-900">Daftar Presensi Sebelumnya</h2>
                 <div class="overflow-scroll lg:overflow-auto">
                     @if($attendances->count())
                     <table class="w-full">

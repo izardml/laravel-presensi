@@ -109,6 +109,7 @@ class GuruController extends Controller
         $attdetail = Attdetail::where('attendance_id', $id)->get();
 
         return view('detail')->with([
+            'no' => 1,
             'user' => $user,
             'attendance' => $attendance,
             'attdetails' => $attdetail,

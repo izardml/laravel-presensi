@@ -18,3 +18,7 @@ td {
 .hamburger-line {
     @apply w-[30px] h-[2px] my-2 block bg-slate-100;
 }
+
+table, th, td {
+    @apply print:border print:border-black text-sm;
+}

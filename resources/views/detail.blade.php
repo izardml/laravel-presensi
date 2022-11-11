@@ -7,13 +7,7 @@
     {{-- <h1>Main</h1> --}}
 
     <div class="lg:w-5/6">
-        <div class="w-full h-10 bg-blue-500 lg:hidden">
-            <button id="hamburger" name="hamburger" type="button" class="block absolute left-4">
-                <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
-                <span class="hamburger-line transition duration-300 ease-in-out"></span>
-                <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
-            </button>
-        </div>
+        @include('stickybar')
         
         <div class="px-3 py-10 lg:px-6" id="main">
             {{-- <a href="/guru"><button class="text-xs bg-blue-500 text-slate-100 px-2 py-1 mb-3 rounded-md hover:opacity-80">Back</button></a> --}}
