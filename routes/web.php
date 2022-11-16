@@ -18,16 +18,15 @@ use App\Http\Controllers\SiswaController;
 
 Route::get('/', function () {
     // return view('welcome');
-    // if(['middleware' => ['auth']]){
-    //     if (auth()->user()->role == "guru"){
-    //         return redirect('guru.index');
-    //     }elseif (auth()->user()->role == "siswa") {
-    //         return redirect('siswa.index');
-    //     }
-    // }else {
-    //     return redirect('login.index');
-    // }
-    return redirect()->route('login.index');
+    if(isset(auth()->user()->role)){
+        if (auth()->user()->role == "guru"){
+            return redirect()->route('guru.index');
+        }elseif (auth()->user()->role == "siswa") {
+            return redirect()->route('siswa.index');
+        }
+    }else{
+        return redirect()->route('login.index');
+    }
 });
 
 Route::resource('/login', LoginController::class)->middleware('guest');

@@ -1,4 +1,4 @@
-<div id="sidebar" class="text-zinc-800 bg-white z-50 absolute w-3/4 h-full px-4 shadow-lg hidden lg:block lg:static lg:w-1/6 lg:h-screen">
+<div id="sidebar" class="text-zinc-800 bg-white z-50 absolute w-3/4 h-full px-4 shadow-lg -left-72 duration-300 lg:block lg:static lg:w-1/6 lg:h-screen">
     {{-- <h1>Sidebar</h1> --}}
 
     <div class="mt-10 flex pb-8 border-b">

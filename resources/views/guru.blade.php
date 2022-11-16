@@ -35,7 +35,7 @@
             <div class="mb-10">
                 <div class="flex justify-between print:justify-center">
                     <h2 class="text-2xl font-normal mb-2 text-zinc-800 print:mb-4">Daftar Presensi</h2>
-                    <button onclick="print()" class="print:hidden text-sm bg-blue-500 text-slate-100 px-2 mb-2 rounded-md hover:opacity-80 w-full lg:px-4 lg:py-1 lg:w-auto lg:mr-3">Print</button>
+                    <button onclick="print()" class="print:hidden text-sm bg-blue-500 text-slate-100 px-2 mb-2 rounded-md hover:opacity-80 lg:px-4 lg:py-1 lg:w-auto lg:mr-3">Print</button>
                 </div>
                 <div class="overflow-scroll lg:overflow-auto">
                     @if($attendances->count())

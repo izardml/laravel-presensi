@@ -17,10 +17,12 @@
     const main = document.querySelector('#main');
 
     hamburger.addEventListener('click', function(){
-        sidebar.classList.remove('hidden');
+        sidebar.classList.remove('-left-72');
+        sidebar.classList.add('left-0');
     });
 
     main.addEventListener('click', function(){
-        sidebar.classList.add('hidden');
+        sidebar.classList.remove('left-0');
+        sidebar.classList.add('-left-72');
     });
 </script>
