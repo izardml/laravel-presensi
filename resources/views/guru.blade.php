@@ -5,10 +5,10 @@
     @include('sidebar')
 
     {{-- <h1>Main</h1> --}}
-    <div class="lg:w-5/6">
+    <div class="lg:w-5/6 lg:h-screen lg:overflow-y-scroll">
         @include('stickybar')
 
-        <div class="px-3 py-10 lg:px-6" id="main">
+        <div class="px-3 pt-20 pb-10 lg:px-6 lg:pt-10" id="main">
             <div class="mb-10 print:hidden">
                 <h2 class="text-2xl font-normal mb-4 text-zinc-800">Form Buat Presensi</h2>
                 <form action="/guru" method="post" class="mb-4">
@@ -27,7 +27,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <input type="text" name="topic" id="topic" placeholder="Masukkan topik..." required class="bg-transparent border-b border-slate-300 text-xs mt-3 mb-2 p-1 w-full">
+                    <input type="text" name="topic" id="topic" placeholder="Masukkan topik..." required class="bg-transparent border-b border-slate-300 text-xs mt-3 mb-2 p-1 w-full focus:border-transparent focus:outline-transparent focus:shadow-lg">
                     <input type="submit" value="Submit" class="cursor-pointer text-xs bg-blue-500 text-slate-100 px-2 py-1 rounded-md hover:opacity-80">
                 </form>
             </div>
@@ -62,8 +62,8 @@
                                 <td class="text-center">{{ date("d M Y", strtotime($attendance->date)) }}</td>
                                 <td>{{ $attendance->topic }}</td>
                                 <td class="lg:flex lg:justify-center print:hidden">
-                                    <a href="/guru/{{ $attendance->id }}"><button class="text-sm bg-blue-500 text-slate-100 px-2 rounded-md hover:opacity-80 w-full lg:px-4 lg:py-1 lg:w-auto lg:mr-3">Detail</button></a>
-                                    <a href="/guru/{{ $attendance->id }}/delete"><button onclick="return confirm('Are you sure?')" class="text-sm bg-red-600 text-slate-100 px-2 rounded-md hover:opacity-80 w-full lg:px-4 lg:py-1 lg:w-auto lg:mr-3">Hapus</button></a>
+                                    <a href="/guru/{{ $attendance->id }}"><button class="text-sm bg-blue-500 text-slate-100 px-2 py-1 rounded-md hover:opacity-80 w-full lg:px-4 lg:py-1 lg:w-auto lg:mr-3">Detail</button></a>
+                                    <a href="/guru/{{ $attendance->id }}/delete"><button onclick="return confirm('Are you sure?')" class="text-sm bg-red-600 text-slate-100 px-2 py-1 rounded-md hover:opacity-80 w-full lg:px-4 lg:py-1 lg:w-auto lg:mr-3">Hapus</button></a>
                                 </td>
                             </tr>
                             @endforeach
@@ -72,6 +72,9 @@
                     @else
                         @include('pengalihan')
                     @endif
+                </div>
+                <div class="mt-3">
+                    {{ $attendances->links() }}
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Kelas;
 use App\Models\Subject;
+use App\Models\Attdetail;
 use App\Models\Attendance;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -44,7 +45,8 @@ class DatabaseSeeder extends Seeder
         ]);
         User::factory(10)->create();
 
-        // Attendance::factory(10)->create();
+        Attendance::factory(20)->create();
+        Attdetail::factory(20)->create();
         // Attendance::factory()->create([
         //     'teacher_id' => 1,
         //     'subject_id' => 1,

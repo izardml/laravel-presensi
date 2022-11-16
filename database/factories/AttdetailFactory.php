@@ -17,7 +17,9 @@ class AttdetailFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'attendance_id' => fake()->numberBetween(1, 20),
+            'student_id' => 2,
+            'attstatus' => "tanpaKeterangan",
         ];
     }
 }

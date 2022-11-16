@@ -17,12 +17,19 @@
     const main = document.querySelector('#main');
 
     hamburger.addEventListener('click', function(){
-        sidebar.classList.remove('-left-72');
+        sidebar.classList.remove('-left-full');
         sidebar.classList.add('left-0');
     });
 
     main.addEventListener('click', function(){
         sidebar.classList.remove('left-0');
-        sidebar.classList.add('-left-72');
+        sidebar.classList.add('-left-full');
     });
+
+    // stickybar
+    // const stickybar = document.querySelector('#stickybar');
+
+    // function stickybar(){
+    //     stickybar.classList.toggle('fixed z-40');
+    // }
 </script>

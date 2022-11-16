@@ -21,17 +21,19 @@ class SiswaController extends Controller
         $atttoday = Attdetail::join('attendances', 'attdetails.attendance_id', '=', 'attendances.id')
             ->where([
                 ['student_id', '=', $id],
-                ['attendances.date', '=', date('Y-m-d')],
-            ])
-            ->get();
+                // ['attendances.date', '=', date('Y-m-d')],
+                ['attendances.date', '=', '2022-11-16'],
+            ])->get();
 
         // $attendance = Attdetail::where('student_id', $id)->get();
         $attendance = Attdetail::join('attendances', 'attdetails.attendance_id', '=', 'attendances.id')
             ->where([
                 ['student_id', '=', $id],
                 ['attendances.date', '<>', date('Y-m-d')],
-            ])
-            ->get();
+            ])->get();
+
+        $atttoday = Attdetail::paginate(5);
+        $attendance = Attdetail::paginate(50);
 
         return view('siswa')->with([
             'no' => 1,

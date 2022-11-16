@@ -1,5 +1,5 @@
-<div class="flex flex-col items-center mt-3">
-    <svg width="150" viewBox="0 0 187 219" fill="none" xmlns="http://www.w3.org/2000/svg">
+<div class="flex flex-col items-center mt-6">
+    {{-- <svg width="150" viewBox="0 0 187 219" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M171.921 112.679C173.1 112.174 174.446 111.921 175.877 111.921C181.43 111.921 185.975 116.466 185.975 122.02C185.975 127.574 181.43 132.118 175.877 132.118C174.698 132.118 173.604 131.949 172.51 131.529" stroke="#5F6368" stroke-width="2" stroke-miterlimit="10"/>
         <path d="M71.1079 96.7744C71.4445 96.7744 76.0167 100.14 78.2608 101.824" stroke="#5F6368" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M50.7432 99.2988C53.7726 98.2889 58.1485 94.5021 59.9998 91.8934C61.8512 89.2847 64.6282 86.7602 67.8259 87.1809C70.8554 87.6017 72.9592 90.7995 73.0433 93.8289C73.2116 96.8584 71.8652 99.8037 70.3505 102.497C65.8904 110.828 57.5594 119.243 50.7432 125.806V99.2988Z" fill="#CEEAD6"/>
@@ -27,6 +27,9 @@
         <path d="M166.62 195.736L146.76 218.121L117.56 205.75C117.56 205.75 133.212 191.865 141.122 184.965L166.62 195.736Z" fill="#DADCDF"/>
         <path d="M67.0689 95.1749C68.6678 95.1749 68.6678 92.6504 67.0689 92.6504C65.3859 92.6504 65.3859 95.1749 67.0689 95.1749Z" fill="#5F6368"/>
         <path d="M14.3057 106.872L15.9887 124.123" stroke="#5F6368" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <p>Belum ada presensi</p>
+    </svg> --}}
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="80" fill="#27272a" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 0c-41.8 0-77.4 26.7-90.5 64H64C28.7 64 0 92.7 0 128V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H282.5C269.4 26.7 233.8 0 192 0zm0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM128 256a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zM80 432c0-44.2 35.8-80 80-80h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16z"/></svg>
+    </div>
+    <p class="mt-4">Belum ada presensi</p>
 </div>

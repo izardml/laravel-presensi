@@ -23,15 +23,16 @@ class GuruController extends Controller
         $kelas = Kelas::whereNot('id', 1)->get();
         $teacher_id = Auth::user()->id;
         // $attendance = Attendance::all();
-        $attendance = Attendance::where('teacher_id', $teacher_id)
+        $attendances = Attendance::where('teacher_id', $teacher_id)
             ->orderBy('id', 'desc')
             ->get();
+        $attendances = Attendance::paginate(5);
 
         return view('guru')->with([
             'no' => 1,
             'subjects' => $subject,
             'kelass' => $kelas,
-            'attendances' => $attendance,
+            'attendances' => $attendances,
         ]);
         // return response([
         //     'attendances' => $attendance,

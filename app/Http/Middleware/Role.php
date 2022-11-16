@@ -16,9 +16,9 @@ class Role
      */
     public function handle(Request $request, Closure $next, ...$role)
     {
-        if(in_array($request->user()->role, $role)){
-            return $next($request);
+        if(!(in_array($request->user()->role, $role))){
+            echo "<script>history.back()</script>";
         }
-        echo "<script>history.back()</script>";
+        return $next($request);
     }
 }

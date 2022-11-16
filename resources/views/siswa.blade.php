@@ -5,10 +5,10 @@
     @include('sidebar')
 
     {{-- <h1>Main</h1> --}}
-    <div class="lg:w-5/6">
+    <div class="lg:w-5/6 lg:h-screen lg:overflow-y-scroll">
         @include('stickybar')
 
-        <div class="px-3 py-10 lg:px-6" id="main">
+        <div class="px-3 pt-20 pb-10 lg:px-6 lg:pt-10" id="main">
             <div class="mb-10">
                 <h2 class="text-2xl font-normal mb-4 text-zinc-900">Daftar Presensi Hari Ini</h2>
                 <div class="overflow-scroll lg:overflow-auto">
@@ -57,6 +57,9 @@
                         @include('pengalihan')
                     @endif
                 </div>
+                <div class="mt-3">
+                    {{ $atttodays->links() }}
+                </div>
             </div>
             <div class="mb-10">
                 <h2 class="text-2xl font-normal mb-4 text-zinc-900">Daftar Presensi Sebelumnya</h2>
@@ -101,6 +104,9 @@
                     @else
                         @include('pengalihan')
                     @endif
+                </div>
+                <div class="mt-3">
+                    {{ $attendances->links() }}
                 </div>
             </div>
         </div>
