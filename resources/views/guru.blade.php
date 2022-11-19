@@ -54,8 +54,8 @@
                         <tbody>
                             @foreach ($attendances as $attendance)
                             <tr>
-                                {{-- <td class="text-center">{{ $attendance->id }}</td> --}}
-                                <td class="text-center">{{ $no++ }}</td>
+                                <td class="text-center">{{ $attendance->id }}</td>
+                                {{-- <td class="text-center">{{ $no++ }}</td> --}}
                                 {{-- <td>{{ $attendance->teacher->name }}</td> --}}
                                 <td>{{ $attendance->subject->name }}</td>
                                 <td class="text-center">{{ $attendance->kelas->name }}</td>

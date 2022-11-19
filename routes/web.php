@@ -39,4 +39,5 @@ Route::group(['middleware' => ['auth', 'role:guru']], function(){
 
 Route::group(['middleware' => ['auth', 'role:siswa']], function(){
     Route::resource('/siswa', SiswaController::class);
+    Route::get('/riwayat', [SiswaController::class, 'riwayat']);
 });

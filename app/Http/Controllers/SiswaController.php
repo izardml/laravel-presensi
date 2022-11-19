@@ -19,21 +19,22 @@ class SiswaController extends Controller
         $id = Auth::user()->id;
 
         $atttoday = Attdetail::join('attendances', 'attdetails.attendance_id', '=', 'attendances.id')
+            ->select('attdetails.id', 'attendance_id', 'student_id', 'attstatus')
             ->where([
                 ['student_id', '=', $id],
-                // ['attendances.date', '=', date('Y-m-d')],
-                ['attendances.date', '=', '2022-11-16'],
-            ])->get();
+                ['attendances.date', '=', date('Y-m-d')],
+                ])
+            ->orderBy('attdetails.id', 'desc')
+            ->paginate(5);
 
-        // $attendance = Attdetail::where('student_id', $id)->get();
         $attendance = Attdetail::join('attendances', 'attdetails.attendance_id', '=', 'attendances.id')
+            ->select('attdetails.id', 'attendance_id', 'student_id', 'attstatus')
             ->where([
                 ['student_id', '=', $id],
                 ['attendances.date', '<>', date('Y-m-d')],
-            ])->get();
-
-        $atttoday = Attdetail::paginate(5);
-        $attendance = Attdetail::paginate(50);
+                ])
+            ->orderBy('attdetails.id', 'desc')
+            ->paginate(5);
 
         return view('siswa')->with([
             'no' => 1,
@@ -118,5 +119,24 @@ class SiswaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function riwayat()
+    {
+        $id = Auth::user()->id;
+
+        $attendance = Attdetail::join('attendances', 'attdetails.attendance_id', '=', 'attendances.id')
+            ->select('attdetails.id', 'attendance_id', 'student_id', 'attstatus')
+            ->where([
+                ['student_id', '=', $id],
+                ['attendances.date', '<>', date('Y-m-d')],
+                ])
+            ->orderBy('attdetails.id', 'desc')
+            ->paginate(5);
+
+        return view('history')->with([
+            'no' => 1,
+            'attendances' => $attendance,
+        ]);
     }
 }

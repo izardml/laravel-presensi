@@ -78,7 +78,6 @@ class GuruController extends Controller
             ['kelas_id', '=', $request->kelas_id],
         ])->count();
 
-        // for($x = 1; $x <= $jumlah_siswa; $x++){
         foreach($users as $user){
             Attdetail::create([
                 'attendance_id' => $attendance->id,

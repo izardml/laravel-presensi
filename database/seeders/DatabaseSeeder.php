@@ -45,8 +45,8 @@ class DatabaseSeeder extends Seeder
         ]);
         User::factory(10)->create();
 
-        Attendance::factory(20)->create();
-        Attdetail::factory(20)->create();
+        // Attendance::factory(20)->create();
+        // Attdetail::factory(20)->create();
         // Attendance::factory()->create([
         //     'teacher_id' => 1,
         //     'subject_id' => 1,
